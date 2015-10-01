@@ -39,26 +39,49 @@ t=0
 for i in range(0,n-1,1):
 # e para cada uma das cartas seguintes ate a ultima
     for j in range (i+1,n,1):
-# comparar cada carta com todas as seguintes ate a ultima 	
+# comparar cada carta com todas as seguintes ate a ultima 
+
+        r = Cartas[i]
+        b = Cartas[j]
+        t = t+1
+        pl.plot(X, Cartas, 'ok' )  # Plota todas as cartas, e depois marca i e j.
+        pl.plot(i, r, 'ok', color='r') 
+        pl.plot(j, b, 'ok', color='b')
+		
+        pl.title("Bubble-Iteracao-{}".format(t))
+        pl.xlabel("Posicao das Cartas")
+        pl.ylabel("Valor das Cartas")
+        pl.xlim(-1,20)
+        pl.ylim(-1,20)			
+        pl.savefig("fig/bubble-it-{}".format(t))		
+			
+   #    pl.show()  # Comentado para nao ter que ficar fechando 100 imagens
+   
+   #    Sem este comando as imagens iam continuar se sobrepondo, e nao ser que fossem mostradas em uma janela
+        pl.clf()
+
+	
         if Cartas[i] > Cartas[j]:
 # e caso esta carta seja maior que uma das seguintes,
 # trocar as duas de posicao com o auxilio de uma posicao temporaria.
 
-            t = t+1
-            pl.plot(X, Cartas, 'ok')			
-            pl.title("Bubble-Troca-{}".format(t))
+        #    Todo este bloco foi movido para outra parte, e depois modificado (Tarefa 3)
+		
+        #    t = t+1
+        #    pl.plot(X, Cartas, 'ok')			
+        #    pl.title("Bubble-Troca-{}".format(t))
+		#	
+        #  # pl.xlabel("Posicao das Cartas")  # Comentados por terem se mostrados redundantes
+        #  # pl.ylabel("Valor das Cartas")
+        #  # pl.xlim(-1,20)
+        #  # pl.ylim(-1,20)
+		#	
+        #    pl.savefig("fig/bubble-troca-{}".format(t))		
 			
-          # pl.xlabel("Posicao das Cartas")  # Comentados por terem se mostrados redundantes
-          # pl.ylabel("Valor das Cartas")
-          # pl.xlim(-1,20)
-          # pl.ylim(-1,20)
-			
-            pl.savefig("fig/bubble-troca-{}".format(t))		
-			
-   #        pl.show()  # Comentado para nao ter que ficar fechando 100 imagens
+        #    pl.show()  # Comentado para nao ter que ficar fechando 100 imagens
    
-            # Sem este comando as imagens iam se sobrepondo, e nao ser que fossem mostradas em uma janela
-            pl.clf()
+        #    # Sem este comando as imagens iam se sobrepondo, e nao ser que fossem mostradas em uma janela
+        #    pl.clf()
 			
 			
             temp = Cartas[i]
